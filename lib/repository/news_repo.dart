@@ -12,7 +12,7 @@ class NewsRepository {
   dynamic apiResponse;
   late NewsModel response;
 
-// function to fetch all products from backend database
+// function to fetch all lates news from the api 
   Future getAllNewsHeadlines(context) async {
     try {
       apiResponse = await _apiServices.getApiResponse(
@@ -25,6 +25,8 @@ class NewsRepository {
     }
   }
 
+
+// this function is used to fetch news by categorys 
     Future getAllNewsByCategory(context, category) async {
     try {
       apiResponse = await _apiServices.getApiResponse(
@@ -37,7 +39,7 @@ class NewsRepository {
     }
   }
 
-  // // function to fetch all products from backend database
+  // // function search the news according to query parameter from api 
   Future searchNewsRepo(context, queryData) async {
     try {
       apiResponse = await _apiServices.getApiResponse(

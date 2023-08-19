@@ -21,7 +21,7 @@ class NewsController with ChangeNotifier {
     _loading = val;
   }
 
-  // product  controller for fetching all products
+  // news controller for fetching all latest news and displaying it to frountend home scree in crowsel component
   Future getAllNewsHeadlinesController(context) async {
     try {
       setLoadingState(true);
@@ -37,7 +37,9 @@ class NewsController with ChangeNotifier {
       setLoadingState(false);
     }
   }
+  
 
+// news category controller for displaying the news in frountend according to category chips 
   Future getAllNewsByCategoryController(context, category) async {
     try {
       setLoadingState(true);
@@ -54,7 +56,7 @@ class NewsController with ChangeNotifier {
     }
   }
 
-  // // product controller for searching product insearch bar
+  // search news controller for searching news according to search querry
   Future searchNewsController(context, searchInputData) async {
     try {
       setLoadingState(true);

@@ -5,7 +5,6 @@
   
 
 Develop a mobile application using Flutter that presents users with concise news
-
 summaries, allowing them to stay updated without sifting through long articles.
 
   
@@ -20,8 +19,14 @@ To run the app go in to root of the directory that is **Nuse** and run the comma
   
 
 The whole application structure was developed by **MVC** pattern .
-
 which consist of model view controllers using **provider** as a state management solution
+
+
+### api service used 
+
+https://newsapi.org/docs/get-started
+
+
 
 ### apk link
 
