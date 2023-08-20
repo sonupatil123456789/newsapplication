@@ -30,7 +30,7 @@ https://newsapi.org/docs/get-started
 
 ### apk link
 
-(https://drive.google.com/drive/folders/1AdV3KZdBIIe2WFDCqj1HZBfYbu2_QMeP)
+(https://drive.google.com/drive/folders/1AdV3KZdBIIe2WFDCqj1HZBfYbu2_QMeP?usp=drive_link)
 
   
 
@@ -66,14 +66,21 @@ https://newsapi.org/docs/get-started
  - ***business, entertainment ,general, health ,science ,sports .technology.***
  
 
-### 4 Dark mode 
+### 4 Book mark news page
+
+book mark page has being implemanted on second icon of navbar  all the data has stored in the local database 
+using shared prifference 
+
+
+### 5 Dark mode 
 
 i have implemented the industry  trending feature which is *dark mode* 
-which is located at 
+which is located deeply nested in page as follows  at 
+
 **5 profile  > darkmode**
   
 
-### 5 Handling no internet connection when network is disconnected  
+### 6 Handling no internet connection when network is disconnected  
 
 the connectiviety package is used for handelling the states of internet 
 

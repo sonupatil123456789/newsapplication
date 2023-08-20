@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nuseapp/utils/routes/routes_name.dart';
+import 'package:nuseapp/view/screens/news_details_screen.dart';
 import 'package:nuseapp/view/screens/profile_screen.dart';
 
 import '../../App.dart';
@@ -16,10 +17,14 @@ class Routes {
         return MaterialPageRoute(builder: (buildContext) => ProfileScreen());
 
       case RoutesName.noInternet:
-        return MaterialPageRoute(builder: (buildContext) => NoInternet());
+        return MaterialPageRoute(builder: (buildContext) => const NoInternet());
 
       case RoutesName.searchScreen:
         return MaterialPageRoute(builder: (buildContext) => SearchScreen());
+
+      case RoutesName.newsDetail:
+      Object? newsDetails = settings.arguments;
+        return MaterialPageRoute(builder: (buildContext) => NewsDetailsScreen(newsDetails: newsDetails,));
 
       default:
         return MaterialPageRoute(builder: (_) {

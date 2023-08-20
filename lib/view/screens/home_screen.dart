@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nuseapp/view/screens/bookmark_screen.dart';
 import 'package:nuseapp/view/screens/profile_screen.dart';
 import 'package:provider/provider.dart';
 import '../../controllers/connectiviety_controller.dart';
@@ -15,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List Screens = [MainScreen(), ProfileScreen()];
+  List Screens = [MainScreen(),BookMarkScreen() ,ProfileScreen()];
 
   int index = 0;
 

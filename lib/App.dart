@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:nuseapp/view/screens/home_screen.dart';
-import 'package:provider/provider.dart';
+import 'package:nuseapp/view/screens/news_details_screen.dart';
+
 
 class App extends StatefulWidget {
   const App({super.key});

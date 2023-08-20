@@ -73,7 +73,7 @@ class _CrowselSliderState extends State<CrowselSlider> {
           itemBuilder: (context, pagePosition) {
             return GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, RoutesName.productsDetail,
+                Navigator.pushNamed(context, RoutesName.newsDetail,
                     arguments: {"SingleNews": widget.data[pagePosition]});
                 widget.crowselclick();
               },
@@ -83,16 +83,34 @@ class _CrowselSliderState extends State<CrowselSlider> {
                       height: screenhight * 0.12,
                       child: Text("No image "))
                   : Container(
-                      child: CachedNetworkImage(
-                      imageUrl: widget.data[pagePosition].urlToImage,
-                      width: screenwidth * 0.15,
+                      child:
+                      Image.network(
+                            widget.data[pagePosition].urlToImage,
+                              width: screenwidth * 0.15,
                       height: screenhight * 0.12,
-                      fit: BoxFit.fill,
-                      errorWidget: (context, url, error) => Icon(Icons.error),
-                      fadeOutDuration: const Duration(milliseconds: 1000),
-                      fadeOutCurve: Curves.easeOut,
-                      fadeInDuration: const Duration(milliseconds: 500),
-                    )),
+                            fit: BoxFit.fill,
+                            errorBuilder: (context, error, stackTrace) {
+                              return Container(
+                                width: screenwidth * 0.15,
+                                height: screenhight * 0.12,
+                                // color: Colors.amber,
+                                child: Center(child: Icon(Icons.error)),
+                              );
+                            },
+                          ),
+                      
+                      
+                    //    CachedNetworkImage(
+                    //   imageUrl: widget.data[pagePosition].urlToImage,
+                    //   width: screenwidth * 0.15,
+                    //   height: screenhight * 0.12,
+                    //   fit: BoxFit.fill,
+                    //   errorWidget: (context, url, error) => Icon(Icons.error),
+                    //   fadeOutDuration: const Duration(milliseconds: 1000),
+                    //   fadeOutCurve: Curves.easeOut,
+                    //   fadeInDuration: const Duration(milliseconds: 500),
+                    // )
+                    ),
             );
           }),
     );

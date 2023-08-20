@@ -32,12 +32,14 @@ class BottomBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               IconSvgButton(
-                  crowselclick: () {
-                    screen(0);
-                  },
-                  height: screenhight,
-                  width: screenwidth,
-                  iconimage: AssetImgLinks.home, iconImageColor: iconColor,),
+                crowselclick: () {
+                  screen(0);
+                },
+                height: screenhight,
+                width: screenwidth,
+                iconimage: AssetImgLinks.home,
+                iconImageColor: iconColor,
+              ),
               Ptext(
                 fonttext: "Home",
                 size: screenwidth * 0.028,
@@ -50,14 +52,16 @@ class BottomBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               IconSvgButton(
-                  crowselclick: () {
-                    // screen(1);
-                  },
-                  height: screenhight,
-                  width: screenwidth,
-                  iconimage: AssetImgLinks.list, iconImageColor: iconColor,),
+                crowselclick: () {
+                  screen(1);
+                },
+                height: screenhight,
+                width: screenwidth,
+                iconimage: AssetImgLinks.list,
+                iconImageColor: iconColor,
+              ),
               Ptext(
-                fonttext: "Products",
+                fonttext: "Bookmark",
                 size: screenwidth * 0.028,
                 weight: FontWeight.w300,
               ),
@@ -68,48 +72,14 @@ class BottomBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               IconSvgButton(
-                  crowselclick: () {
-                    // screen(2);
-                  },
-                  height: screenhight,
-                  width: screenwidth,
-                  iconimage: AssetImgLinks.brandWatermark, iconImageColor: iconColor,),
-              Ptext(
-                fonttext: "My Orders",
-                size: screenwidth * 0.028,
-                weight: FontWeight.w300,
+                crowselclick: () {
+                  screen(2);
+                },
+                height: screenhight,
+                width: screenwidth,
+                iconimage: AssetImgLinks.profile,
+                iconImageColor: iconColor,
               ),
-            ],
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              IconSvgButton(
-                  crowselclick: () {
-                    // screen(3);
-                  },
-                  height: screenhight,
-                  width: screenwidth,
-                  iconimage: AssetImgLinks.favorite, iconImageColor: iconColor,),
-              Ptext(
-                fonttext: "favorite",
-                size: screenwidth * 0.028,
-                weight: FontWeight.w300,
-              ),
-            ],
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              IconSvgButton(
-                  crowselclick: () {
-                    screen(1);
-                  },
-                  height: screenhight,
-                  width: screenwidth,
-                  iconimage: AssetImgLinks.profile, iconImageColor: iconColor,),
               Ptext(
                 fonttext: "Profile",
                 size: screenwidth * 0.028,

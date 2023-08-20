@@ -14,7 +14,6 @@ import 'controllers/news_controller.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   var directory = await getApplicationDocumentsDirectory();
-  Hive.init(directory.path);
   runApp(const MyApp());
 }
 

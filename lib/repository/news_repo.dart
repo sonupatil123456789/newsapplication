@@ -12,7 +12,8 @@ class NewsRepository {
   dynamic apiResponse;
   late NewsModel response;
 
-// function to fetch all lates news from the api 
+
+// function to fetch all lates news from the api
   Future getAllNewsHeadlines(context) async {
     try {
       apiResponse = await _apiServices.getApiResponse(
@@ -25,12 +26,12 @@ class NewsRepository {
     }
   }
 
-
-// this function is used to fetch news by categorys 
-    Future getAllNewsByCategory(context, category) async {
+// this function is used to fetch news by categorys
+  Future getAllNewsByCategory(context, category) async {
     try {
       apiResponse = await _apiServices.getApiResponse(
-          "${ApiEndpointsUrl.categorys}category=$category${ApiEndpointsUrl.apiKey}" , context);
+          "${ApiEndpointsUrl.categorys}category=$category${ApiEndpointsUrl.apiKey}",
+          context);
       response = NewsModel.fromJson(apiResponse);
       return response;
     } catch (ex) {
@@ -39,11 +40,12 @@ class NewsRepository {
     }
   }
 
-  // // function search the news according to query parameter from api 
+  // // function search the news according to query parameter from api
   Future searchNewsRepo(context, queryData) async {
     try {
       apiResponse = await _apiServices.getApiResponse(
-          "${ApiEndpointsUrl.search}q=$queryData${ApiEndpointsUrl.apiKey}", context);
+          "${ApiEndpointsUrl.search}q=$queryData${ApiEndpointsUrl.apiKey}",
+          context);
       response = NewsModel.fromJson(apiResponse);
       return response;
     } catch (ex) {
@@ -51,5 +53,4 @@ class NewsRepository {
           TheamColors.PtexrtColor2, "Error", Icons.done, context);
     }
   }
-
 }

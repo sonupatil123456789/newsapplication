@@ -2,14 +2,10 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
-final ImagePicker pickedFile = ImagePicker();
 
 class InputFielUtils {
-  late String ImagePath = "";
-  late String ImageName = "";
-  late File imageFile = File("");
+
   late Map imageDetails = <dynamic, dynamic>{};
 
   late Map<String, String> inputFieldData;
@@ -29,18 +25,5 @@ class InputFielUtils {
     InputFielUtils.nameController.dispose();
   }
 
-   static Future imagePicker() async {
-    final XFile? image =
-        await pickedFile.pickImage(source: ImageSource.gallery);
 
-    if (pickedFile != null) {
-      dynamic ImagePath = image!.path;
-      dynamic ImageName = "${DateTime.now()}_${image.name}";
-      File imageFile = File(ImagePath);
-      print(ImagePath);
-      print(imageFile);
-      // Map imageDetails = {"imageFilePath": ImagePath, "imageName": ImageName};
-      return ImagePath;
-    }
-  }
 }

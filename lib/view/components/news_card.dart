@@ -1,7 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:provider/provider.dart';
+import '../../controllers/news_controller.dart';
 import '../../models/news_model.dart';
 import '../../utils/constants/colorpallets.dart';
 import '../../utils/routes/routes_name.dart';
@@ -31,12 +31,33 @@ class NewsCard extends StatefulWidget {
 }
 
 class _NewsCardState extends State<NewsCard> {
+  late NewsController newsController = NewsController();
+  Map<String, dynamic> bookMark = {};
+
+  @override
+  void initState() {
+    print(widget.singleNews.title);
+    newsController = Provider.of<NewsController>(context, listen: false);
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     final dynamic screenhight = MediaQuery.of(context).size.height;
     final dynamic screenwidth = MediaQuery.of(context).size.width;
+
+
+
+    Map<String, dynamic> bookMark = {
+      'title': widget.singleNews.title,
+      'description': widget.singleNews.description,
+      'urlToImage': widget.singleNews.urlToImage,
+      'author': widget.singleNews.author,
+      'publishedAt': widget.singleNews.publishedAt,
+      'url': widget.singleNews.url,
+    };
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, RoutesName.productsDetail,
+        Navigator.pushNamed(context, RoutesName.newsDetail,
             arguments: {"SingleNews": widget.singleNews});
         widget.onTapFunction();
       },
@@ -87,9 +108,9 @@ class _NewsCardState extends State<NewsCard> {
                           ),
                   ),
                 ),
-                SizedBox(width: screenwidth * 0.05),
+                SizedBox(width: screenwidth * 0.04),
                 Container(
-                  width: screenwidth * 0.56,
+                  width: screenwidth * 0.52,
                   height: screenhight * 0.12,
                   // color: Color.fromARGB(255, 128, 64, 255),
                   child: Column(
@@ -118,7 +139,7 @@ class _NewsCardState extends State<NewsCard> {
                         alignment: Alignment.centerLeft,
                         // color: Colors.amberAccent,
                         child: Text(
-                          widget.date.substring(0,9),
+                          widget.date.substring(0, 9),
                           maxLines: 1,
                           style: GoogleFonts.rubik(
                             fontWeight: FontWeight.w400,
@@ -140,20 +161,50 @@ class _NewsCardState extends State<NewsCard> {
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
-                                color: HexColor("#00000"),
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12),
+                                child: widget.image == null
+                                    ? Container(
+                                        width: screenwidth * 0.15,
+                                        height: screenhight * 0.12,
+                                        // color: Colors.amber,
+                                      )
+                                    : Image.network(
+                                        widget.image,
+                                        width: screenwidth * 0.15,
+                                        height: screenhight * 0.12,
+                                        fit: BoxFit.fill,
+                                        errorBuilder:
+                                            (context, error, stackTrace) {
+                                          return Container(
+                                            width: screenwidth * 0.15,
+                                            height: screenhight * 0.12,
+                                            // color: Colors.amber,
+                                            child: Icon(
+                                              Icons.error,
+                                              size: screenwidth * 0.03,
+                                            ),
+                                          );
+                                        },
+                                      ),
                               ),
                             ),
-                            SizedBox(width: 10,),
+                            SizedBox(
+                              width: 10,
+                            ),
                             Container(
                               width: screenwidth * 0.20,
                               height: screenwidth * 0.07,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                // color: Colors.blueAccent
-                              ),
+                                  // color: Colors.blueAccent
+                                  ),
                               child: Text(
-                                 widget.author == "null" ? "shreyas patil" : widget.author,
-                                 maxLines: 1,
+                                widget.author == "null"
+                                    ? "shreyas patil"
+                                    : widget.author,
+                                maxLines: 1,
                                 style: GoogleFonts.rubik(
                                   fontWeight: FontWeight.w400,
                                   fontSize: 12,
@@ -168,6 +219,18 @@ class _NewsCardState extends State<NewsCard> {
                     ],
                   ),
                 ),
+                SizedBox(width: screenwidth * 0.02),
+                InkWell(
+                  onTap: () {
+                    newsController.bookMarkDataController(context, bookMark);
+                  },
+                  child: Container(
+                    height: screenhight * 0.13,
+                    alignment: Alignment.topCenter,
+                    // color: Colors.amber,
+                    child:  Icon(Icons.bookmark, color: TheamColors.primaryColor,),
+                  ),
+                )
               ],
             ),
           ],

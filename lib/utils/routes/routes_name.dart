@@ -7,11 +7,7 @@ class RoutesName {
   static const String noInternet = "noInternet";
   static const String searchScreen = "searchScreen";
   static const String profileScreen = "profileScreen";
-
-
-   
-  static const String allProducts = "allProducts";
-  static const String productsDetail = "productsDetail";
+  static const String newsDetail = "newsDetail";
 
 
   

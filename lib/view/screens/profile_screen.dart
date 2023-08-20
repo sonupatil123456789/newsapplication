@@ -48,27 +48,6 @@ class ProfileScreen extends StatelessWidget {
                   //  style: Colors.amberAccent,   CupertinoIcons.cube_box_fill
                 ),
               ),
-              InkWell(
-                onTap: () {},
-                child: ListTile(
-                  // tileColor: Colors.black,
-                  leading: Icon(
-                    CupertinoIcons.cube_box_fill,
-                    color: TheamColors.unselectedChipColor,
-                    size: 29,
-                  ),
-                  title: Text(
-                    'My Orders',
-                    style: TextStyle(color: TheamColors.HtexrtColor1),
-                  ),
-                  subtitle: Text(
-                    'Check status of order',
-                    style: TextStyle(color: TheamColors.HtexrtColor2),
-                  ),
-                  style: ListTileStyle.list,
-                  //  style: Colors.amberAccent,
-                ),
-              ),
               ListTile(
                 // tileColor: Colors.black,
                 leading: Icon(
@@ -128,28 +107,3 @@ class ProfileScreen extends StatelessWidget {
 
 
 
-
-            // ValueListenableBuilder(
-            //   builder: (BuildContext context, value, Widget? child) {
-            //     return ListTile(
-            //       tileColor: Colors.black,
-            //       leading: Icon(
-            //         //  Icons. dark_mode,
-            //         _enabled.value == true ? Icons.dark_mode : Icons.light_mode,
-            //         size: 29,
-            //       ),
-            //       title: Text('Myorders'),
-            //       subtitle: Text('Check status of order'),
-            //       trailing: Switch(
-            //         activeColor: Colors.deepPurpleAccent,
-            //         onChanged: (bool? value) {
-            //           _enabled.value = value!;
-            //         },
-            //         value: _enabled.value,
-            //       ),
-            //       style: ListTileStyle.list,
-            //       //  style: Colors.amberAccent,
-            //     );
-            //   },
-            //   valueListenable: _enabled,
-            // ),

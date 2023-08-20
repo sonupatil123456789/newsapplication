@@ -37,19 +37,7 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   void initState() {
-    // categoryController =
-    //     Provider.of<CategoryController>(context, listen: false);
     newsController = Provider.of<NewsController>(context, listen: false);
-    // productController = Provider.of<ProductController>(context, listen: false);
-    // brandController = Provider.of<BrandController>(context, listen: false);
-
-    // brandController.brandController(context);
-
-    // productController.mainBannerProducts(context);
-    // productController.mostLikedProducts(context);
-    // productController.HieghestRatedProducts(context);
-
-    // cartController.fetchUserCartController(context);
 
     newsController.getAllNewsHeadlinesController(context);
     newsController.getAllNewsByCategoryController(context, categoryName);
